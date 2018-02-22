@@ -18,9 +18,11 @@
     "del": "^2.2.2",
     "dotenv-safe": "^4.0.4",
     "electron-docs": "^3.0.2",
+    "form-data": "^2.3.2",
     "get-crowdin-file-ids": "^1.1.1",
     "github": "^9.2.0",
     "github-slugger": "^1.2.0",
+    "globals": "^11.3.0",
     "got": "^6.7.1",
     "href-type": "^1.0.1",
     "hubdown": "^1.0.0",
@@ -50,8 +52,9 @@
     "prepack": "check-for-leaks",
     "prepush": "check-for-leaks",
     "pretest": "npm run build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "upload-glossary": "node script/upload-glossary.js"
   },
   "electronLatestStableTag": "v1.8.2",
-  "electronMasterBranchCommit": "18362eb948ef91e002e286a835663fd6a3977048"
+  "electronMasterBranchCommit": "366638b1b9fa1520abceec033b90614f78bb333d"
 }
