@@ -368,11 +368,11 @@ Ay lalabas kung ang scroll wheel na bahagi ng kaganapan ay magsimula.
 
 Ay lalabas kung ang scroll wheel na bahagi ng kaganapan ay natapos na.
 
-#### Event: 'scroll-touch-edge' *macOS*
+#### Kaganapan: 'scroll-touch-edge' *macOS*
 
 Ay lalabas kung ang scroll event na bahagi ng kaganapan sa pag-abot sa gilid ng elemento.
 
-#### Event: 'swipe' *macOS*
+#### Kaganapan: 'swipe' *macOS*
 
 Ibinabalika ang:
 
@@ -381,11 +381,11 @@ Ibinabalika ang:
 
 Pinapalabas sa 3-finger swipe. Ang mga posibleng direksyon ay ` up `, ` kanan `, ` pababa `, ` kaliwa `.
 
-#### Event: 'sheet-begin' *macOS*
+#### Kaganapan: 'sheet-begin' *macOS*
 
 Napalabas kapag nagbukas ang window ng sheet.
 
-#### Event: 'sheet-end' *macOS*
+#### Kaganapan: 'sheet-end' *macOS*
 
 Ay lalabas kapag nakasara ang isang sheet ng window.
 
@@ -393,7 +393,7 @@ Ay lalabas kapag nakasara ang isang sheet ng window.
 
 Ay lalabas kung ang native ng pindutan ng bagong tab ay na-click.
 
-### Static Methods
+### Static na pamamaraan
 
 Ang `BrowserWindow`: klas na ito ay mayroong sumusunod na static na pamamaraan:
 
@@ -423,7 +423,7 @@ Binabalik ang `BrowserWindow | null` - Ang window na nagmamay-ari ng ibinigay na
 
 Ibinabalik `BrowserWindow` - Ang window na may ibinigay na `id`.
 
-#### `BrowserWindow.addExtension(path)`
+#### `BrowserWindow.addExtension(landas)`
 
 * `path` String
 
@@ -433,7 +433,7 @@ Ang pamamaraan ay hindi maaring babalik kung ang manifest ng ekstensyon ay nawaw
 
 **noted:** Ang API na ito ay hindi maaaring tawagin bago ang `ready` event ng module na `app` ay ibinubuga.
 
-#### `BrowserWindow.removeExtension(name)`
+#### `BrowserWindow.removeExtension(pangalan)`
 
 * `name` String
 
@@ -447,7 +447,7 @@ Babalik `Object` - Ang mga key ay ang mga pangalan ng extension at bawat halaga 
 
 **noted:** Ang API na ito ay hindi maaaring tawagin bago ang `ready` event ng module na `app` ay ibinubuga.
 
-#### `BrowserWindow.addDevToolsExtension(path)`
+#### `BrowserWindow.addDevToolsExtension(landas)`
 
 * `path` String
 
@@ -459,7 +459,7 @@ Ang pamamaraan ay hindi maaring babalik kung ang manifest ng ekstensyon ay nawaw
 
 **noted:** Ang API na ito ay hindi maaaring tawagin bago ang `ready` event ng module na `app` ay ibinubuga.
 
-#### `BrowserWindow.removeDevToolsExtension(name)`
+#### `BrowserWindow.removeDevToolsExtension(pangalan)`
 
 * `name` String
 
@@ -476,7 +476,7 @@ Upang masuri kung naka-install ang extension ng DevTools maaari mong patakbuhin 
 ```javascript
 const {BrowserWindow} = require('electron')
 
-let installed = BrowserWindow.getDevToolsExtensions().hasOwnProperty('devtron')
+Hayaan ma install ang = BrowserWindow.getDevToolsExtensions().hasOwnProperty('devtron')
 console.log(installed)
 ```
 
@@ -487,8 +487,8 @@ console.log(installed)
 Ang mga bagay na nilikha gamit ang `new BrowserWindow` ay may mga sumusunod na katangian:
 
 ```javascript
-const {BrowserWindow} = require('electron')
-// In this example `win` is our instance
+const {BrowserWindow} = kinakailangan('electron')
+// Sa halimbawa na ito `panalo` ay ating halimbawa
 let win = new BrowserWindow({width: 800, height: 600})
 win.loadURL('https://github.com')
 ```
@@ -612,7 +612,7 @@ Ang pag-sasa alang alang ng normal na window na may HD bidyo player at mga nauug
 #### `win.previewFile(path[, displayName])` *macOS*
 
 * `daan` String - Ang ganap na daan sa file upang i-ipakita gamit ang QuickLook. Ang mahalaga nito habang ginagamit ng Quick Look ang pangalan ng file at lawig ng file sa daan upang matukoy ang tipo ng nilalaman ng file upang buksan.
-* `Ang pagpakita sa pangalan` String (pag-pipilian) - Ang pangalan ng file na ipapakita sa Quick Look modal na tanaw. Ito ay ang malinis na viswal at hindi nakakaapekto sa nilalaman na uri ng file. Defaults to `path`.
+* `Ang pagpakita sa pangalan` String (pag-pipilian) - Ang pangalan ng file na ipapakita sa Quick Look modal na tanaw. Ito ay ang malinis na viswal at hindi nakakaapekto sa nilalaman na uri ng file. Defaults sa `path`.
 
 Ginagamit ang [Quick Look](https://en.wikipedia.org/wiki/Quick_Look) upang i-preview ang file sa ibinigay na landas.
 
@@ -644,8 +644,8 @@ Nagbabalik[`Rectangle`](structures/rectangle.md)
 
 #### `win.setSize(width, height[, animate])`
 
-* `width` Integer
-* `height` Integer
+* `lapad` Integer
+* `taas` Integer
 * `animate` Boolean (opsyonal) *macOS*
 
 Lumalabas ang window sa `width` at `
@@ -655,10 +655,10 @@ height`.
 
 Ibinabalik `Integer[]` - Naglalaman ng lapad at taas ng window.
 
-#### `win.setContentSize(width, height[, animate])`
+#### `win.setContentSize(lapad, taas[, animate])`
 
-* `width` Integer
-* `height` Integer
+* `lapad` Integer
+* `taas` Integer
 * `animate` Boolean (opsyonal) *macOS*
 
 Lumalawak sa lugar ng kliyente ng window (e.g. the web page) to `width` and `height`.
@@ -667,10 +667,10 @@ Lumalawak sa lugar ng kliyente ng window (e.g. the web page) to `width` and `hei
 
 Binabalik ang `Integer[]` - Naglalaman ng window's client area's width and height.
 
-#### `win.setMinimumSize(width, height)`
+#### `win.setMinimumSize(lapad, taas)`
 
-* `width` Integer
-* `height` Integer
+* `lapad` Integer
+* `taas` Integer
 
 Itinatakda ang minimum na laki ng window `width` and `height`.
 
@@ -678,10 +678,10 @@ Itinatakda ang minimum na laki ng window `width` and `height`.
 
 Ibinabalik `Integer[]` - Naglalaman ng lapad at taas ng window.
 
-#### `win.setMaximumSize(width, height)`
+#### `win.setMaximumSize(lapad, taas)`
 
-* `width` Integer
-* `height` Integer
+* `lapad` Integer
+* `taas` Integer
 
 Itinatakda ang maximum na laki ng window `width` and `height`.
 
